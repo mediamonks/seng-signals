@@ -1,5 +1,3 @@
-import {Event} from "./Event";
-
 /*
  * Signal3
  *
@@ -32,7 +30,7 @@ import {SignalAbstract} from "./SignalAbstract";
  * @module weasel
  * @class Signal3
  */
-export class Signal3<T1,T2,T3> extends SignalAbstract
+export class Signal3<T1, T2, T3> extends SignalAbstract
 {
 	/**
 	 * Emit the signal, notifying each connected listener.
@@ -55,15 +53,18 @@ export class Signal3<T1,T2,T3> extends SignalAbstract
 	{
 		var head = this.willEmit();
 		var p = head;
+
 		while(p != null)
 		{
-			p._listener(arg1, arg2, arg3)
+			p._listener(arg1, arg2, arg3);
+
 			if(!p.stayInList)
 			{
 				p.dispose();
 			}
 			p = p._next;
 		}
+
 		this.didEmit(head);
 	}
 }

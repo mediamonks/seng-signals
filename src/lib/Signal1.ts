@@ -1,5 +1,3 @@
-import {Event} from "./Event";
-
 /*
  * Signal1
  *
