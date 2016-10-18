@@ -27,9 +27,9 @@ import {SignalAbstract} from "./SignalAbstract";
 
 export class SignalConnection
 {
-	public _next:SignalConnection = null;
-	public _signal:SignalAbstract;
-	public _listener:Function;
+	public _next:SignalConnection|null = null;
+	public _signal:SignalAbstract|null;
+	public _listener:Function|null;
 	public stayInList:boolean = true;
 
 	/**
@@ -37,7 +37,7 @@ export class SignalConnection
 	 * @param {SignalAbstract} signal
 	 * @param {Function} listener
 	 */
-	constructor(signal:SignalAbstract, listener:Function)
+	constructor(signal:SignalAbstract|null, listener:Function|null)
 	{
 		this._signal = signal;
 		this._listener = listener;
@@ -47,7 +47,7 @@ export class SignalConnection
 	 * Only dispatches once
 	 * @returns {SignalConnection}
 	 */
-	once():SignalConnection
+	public once():SignalConnection
 	{
 		this.stayInList = false;
 		return this;
@@ -56,9 +56,9 @@ export class SignalConnection
 	/**
 	 * Throws away the signal
 	 */
-	dispose():void
+	public dispose():void
 	{
-		if(this._signal != null)
+		if(this._signal)
 		{
 			this._signal.disconnect(this);
 			this._signal = null;

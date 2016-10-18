@@ -24,6 +24,7 @@
  */
 
 import {SignalAbstract} from "./SignalAbstract";
+import {SignalConnection} from "./SignalConnection";
 
 /**
  * @namespace createts.events
@@ -37,7 +38,7 @@ export class Signal1<T> extends SignalAbstract
 	 *
 	 * @method emit
 	 */
-	public emit(arg1:T)
+	public emit(arg1:T):void
 	{
 		if(this.dispatching())
 		{
@@ -49,19 +50,23 @@ export class Signal1<T> extends SignalAbstract
 		}
 	}
 
-	private emitImpl(arg1:T)
+	private emitImpl(arg1:T):void
 	{
 		var head = this.willEmit();
-		var p = head;
+		var p:SignalConnection|null = head;
+
 		while(p != null)
 		{
 			p._listener(arg1);
+
 			if(!p.stayInList)
 			{
 				p.dispose();
 			}
+
 			p = p._next;
 		}
+
 		this.didEmit(head);
 	}
 }

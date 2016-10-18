@@ -11,11 +11,11 @@ var baseConfig = require('../config/webpack.config.dist');
 
 var umd = baseConfig();
 umd.output.libraryTarget = "umd";
-umd.output.filename = "./dist/seng-boilerplate-umd.js";
+umd.output.filename = "./dist/signal-umd.js";
 
 var umdMin = baseConfig();
 umdMin.output.libraryTarget = "umd";
-umdMin.output.filename = "./dist/seng-boilerplate-umd.min.js";
+umdMin.output.filename = "./dist/signal-umd.min.js";
 umdMin.plugins = umdMin.plugins.concat(
 	uglifyPluginSetting
 );
@@ -24,13 +24,13 @@ umdMin.plugins = umdMin.plugins.concat(
 var amd = baseConfig();
 delete amd.output.library;
 amd.output.libraryTarget = "amd";
-amd.output.filename = "./dist/seng-boilerplate-amd.js";
+amd.output.filename = "./dist/signal-amd.js";
 
 
 var cjs2 = baseConfig();
 delete cjs2.output.library;
 cjs2.output.libraryTarget = "commonjs2";
-cjs2.output.filename = "./dist/seng-boilerplate-commonjs.js";
+cjs2.output.filename = "./dist/signal-commonjs.js";
 
 
 var system = baseConfig();
@@ -40,20 +40,20 @@ system.plugins.push(
 	new WebpackSystemRegister({
 		systemjsDeps: [
 		],
-		registerName: 'seng-boilerplate', // optional name that SystemJS will know this bundle as.
+		registerName: 'signal', // optional name that SystemJS will know this bundle as.
 	})
 );
-system.output.filename = "./dist/seng-boilerplate-systemjs.js";
+system.output.filename = "./dist/signal-systemjs.js";
 
 
 var browser = baseConfig();
 browser.output.libraryTarget = "var";
-browser.output.filename = "./dist/seng-boilerplate.js";
+browser.output.filename = "./dist/signal.js";
 
 
 var browserMin = baseConfig();
 browserMin.output.libraryTarget = "var";
-browserMin.output.filename = "./dist/seng-boilerplate.min.js";
+browserMin.output.filename = "./dist/signal.min.js";
 browserMin.plugins = browserMin.plugins.concat(
 	uglifyPluginSetting
 );

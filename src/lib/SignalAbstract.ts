@@ -32,7 +32,7 @@ import {SignalConnection} from "./SignalConnection";
 export class Task
 {
 	public fn:Function;
-	public next:Task = null;
+	public next:Task|null = null;
 
 	constructor(fn:Function)
 	{
@@ -42,14 +42,14 @@ export class Task
 
 export class SignalAbstract
 {
-	public static DISPATCHING_SENTINEL = new SignalConnection(null, null);
+	public static DISPATCHING_SENTINEL:SignalConnection = new SignalConnection(null, null);
 
-	private _head:SignalConnection;
-	private _deferredTasks:Task = null;
+	private _head:SignalConnection|null;
+	private _deferredTasks:Task|null = null;
 
-	constructor(listener:Function = null)
+	constructor(listener?:Function)
 	{
-		this._head = (listener != null) ? new SignalConnection(this, listener) : null;
+		this._head = listener ? new SignalConnection(this, listener) : null;
 	}
 
 	/**
@@ -80,6 +80,7 @@ export class SignalAbstract
 		{
 			this.listAdd(conn, prioritize);
 		}
+
 		return conn;
 	}
 
@@ -89,7 +90,7 @@ export class SignalAbstract
 	 */
 	public disconnect(conn:SignalConnection):void
 	{
-		// inlining this.dispatching();
+
 		if(this._head == SignalAbstract.DISPATCHING_SENTINEL)
 		{
 			this.defer(() => this.listRemove(conn));
@@ -100,10 +101,11 @@ export class SignalAbstract
 		}
 	}
 
-	public defer(fn:() => void)
+	public defer(fn:() => void):void
 	{
-		var tail = null;
+		var tail:Task|null = null;
 		var p = this._deferredTasks;
+
 		while(p != null)
 		{
 			tail = p;
@@ -121,18 +123,20 @@ export class SignalAbstract
 		}
 	}
 
-	public willEmit():SignalConnection
+	public willEmit():SignalConnection|null
 	{
 		var snapshot = this._head;
 		this._head = SignalAbstract.DISPATCHING_SENTINEL;
 		return snapshot;
 	}
 
-	public didEmit(head:SignalConnection):void
+	public didEmit(head:SignalConnection|null):void
 	{
-		this._head = head;
 		var snapshot = this._deferredTasks;
+
+		this._head = head;
 		this._deferredTasks = null;
+
 		while(snapshot != null)
 		{
 			snapshot.fn();
@@ -145,7 +149,7 @@ export class SignalAbstract
 		return this._head == SignalAbstract.DISPATCHING_SENTINEL;
 	}
 
-	public listAdd(conn:SignalConnection, prioritize:boolean)
+	public listAdd(conn:SignalConnection, prioritize:boolean):void
 	{
 		if(prioritize)
 		{
@@ -154,13 +158,15 @@ export class SignalAbstract
 		}
 		else
 		{
-			var tail:SignalConnection = null;
-			var p = <SignalConnection> this._head;
+			var tail:SignalConnection|null = null;
+			var p:SignalConnection|null = <SignalConnection> this._head;
+
 			while(p != null)
 			{
 				tail = p;
 				p = p._next;
 			}
+
 			if(tail != null)
 			{
 				tail._next = conn;
@@ -172,10 +178,10 @@ export class SignalAbstract
 		}
 	}
 
-	public listRemove(conn:SignalConnection)
+	public listRemove(conn:SignalConnection):void
 	{
-		var prev:SignalConnection = null;
-		var p:SignalConnection = this._head;
+		var prev:SignalConnection|null = null;
+		var p:SignalConnection|null = this._head;
 
 		while(p != null)
 		{

@@ -24,6 +24,7 @@
  */
 
 import {SignalAbstract} from "./SignalAbstract";
+import {SignalConnection} from "./SignalConnection";
 
 /**
  * @namespace core.events
@@ -52,7 +53,7 @@ export class Signal3<T1, T2, T3> extends SignalAbstract
 	private emitImpl(arg1:T1, arg2:T2, arg3:T3)
 	{
 		var head = this.willEmit();
-		var p = head;
+		var p:SignalConnection|null = head;
 
 		while(p != null)
 		{
