@@ -11,7 +11,7 @@
     "sourceMap": false,
     "inlineSourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmitHelpers": true,
+    "noEmitHelpers": false,
     "strictNullChecks": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,

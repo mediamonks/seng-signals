@@ -49,7 +49,7 @@ describe('Signal', () =>
 			signal.emit();
 			signal.emit();
 			signal.emit();
-			console.log(called);
+
 			assert.equal(called, 3);
 		});
 
