@@ -1,10 +1,10 @@
-[![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
-[![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
-[![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
+[![Travis](https://img.shields.io/travis/mediamonks/signal.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/signal)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/signal.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/signal)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/signal.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/signal?branch=master)
+[![npm](https://img.shields.io/npm/v/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
+[![npm](https://img.shields.io/npm/dm/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
 
-# seng-boilerplate
+# signal
 
 Add a description here...
 
@@ -14,13 +14,13 @@ Add a description here...
 ### npm
 
 ```sh
-npm i -S seng-boilerplate
+npm i -S signal
 ```
 
 ### other
 
 We also have browser, amd, commonjs, umd, systemjs and es6 versions of
-this module available attached to the [Github Releases](https://github.com/mediamonks/seng-boilerplate/releases).
+this module available attached to the [Github Releases](https://github.com/mediamonks/signal/releases).
 
 <!---
 
@@ -32,7 +32,7 @@ new version.
 ### browser
 
 ```html
-<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js"></script>
+<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.min.js"></script>
 ```
 ```js
 console.log(window.SengBoilerplate)
@@ -43,12 +43,12 @@ console.log(window.SengBoilerplate)
 Besides the browser version, there are other versions available for
 download as well:
 
-- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js))
-- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-umd.min.js))
-- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-amd.js)
-- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-commonjs.js)
-- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-system.js)
-- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-es6.zip)
+- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.min.js))
+- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-umd.min.js))
+- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-amd.js)
+- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-commonjs.js)
+- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-system.js)
+- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-es6.zip)
 
 -->
 
@@ -60,8 +60,8 @@ targets yourself.
 ## Usage
 
 ```ts
-import SengBoilerplate from 'seng-boilerplate';
-// import SengBoilerplate from 'seng-boilerplate/lib/classname';
+import SengBoilerplate from 'signal';
+// import SengBoilerplate from 'signal/lib/classname';
 
 // do something with SengBoilerplate
 ```
@@ -69,22 +69,22 @@ import SengBoilerplate from 'seng-boilerplate';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/mediamonks/seng-boilerplate/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/mediamonks/signal/master/doc/typedoc/index.html).
 
 
 ## Building
 
-In order to build seng-boilerplate, ensure that you have [Git](http://git-scm.com/downloads)
+In order to build signal, ensure that you have [Git](http://git-scm.com/downloads)
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/mediamonks/seng-boilerplate.git
+git clone https://github.com/mediamonks/signal.git
 ```
 
-Change to the seng-boilerplate directory:
+Change to the signal directory:
 ```sh
-cd seng-boilerplate
+cd signal
 ```
 
 Install typings cli utility:
@@ -117,19 +117,19 @@ If you want to create the distribution files yourself, you can run the
 `build-dist` script, and the following files will get generated in the
 `dist` folder:
 
-- **/dist/seng-boilerplate.js**: bundled with webpack, can be loaded from
+- **/dist/signal.js**: bundled with webpack, can be loaded from
 	a script tag, available as `window.SengBoilerplate`
-- **/dist/seng-boilerplate.min.js**: same as above, but minified
-- **/dist/seng-boilerplate-amd.js**: bundled with webpack, can be used
+- **/dist/signal.min.js**: same as above, but minified
+- **/dist/signal-amd.js**: bundled with webpack, can be used
 	with e.g. requirejs
-- **/dist/seng-boilerplate-commonjs.js**: bundled with webpack, can be
+- **/dist/signal-commonjs.js**: bundled with webpack, can be
 	used in systems that support commonjs, but you should just use npm
-- **/dist/seng-boilerplate-umd.js**: bundled with webpack, works in the
+- **/dist/signal-umd.js**: bundled with webpack, works in the
 	browser, with requirejs, and in a commonjs system
-- **/dist/seng-boilerplate-umd.min.js**: same as above, but minified
-- **/dist/seng-boilerplate-system.js**: bundled with typescript, can be
+- **/dist/signal-umd.min.js**: same as above, but minified
+- **/dist/signal-system.js**: bundled with typescript, can be
 	used in systems	that support systemjs
-- **/dist/seng-boilerplate-es6.zip**: transpiled with typescript, only
+- **/dist/signal-es6.zip**: transpiled with typescript, only
 	types are removed from the source files
 
 ## Contribute
@@ -291,7 +291,7 @@ sure the encrypted values only work for that repository.
 
     ```sh
     $ travis encrypt <your_auth_token>
-    Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
+    Detected repository as mediamonks/signal, is this correct? |yes|
     Please add the following to your .travis.yml file:
 
       secure: "YcN...Zb="
