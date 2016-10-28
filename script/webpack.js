@@ -11,11 +11,11 @@ var baseConfig = require('../config/webpack.config.dist');
 
 var umd = baseConfig();
 umd.output.libraryTarget = "umd";
-umd.output.filename = "./dist/signal-umd.js";
+umd.output.filename = "./dist/signals-umd.js";
 
 var umdMin = baseConfig();
 umdMin.output.libraryTarget = "umd";
-umdMin.output.filename = "./dist/signal-umd.min.js";
+umdMin.output.filename = "./dist/signals-umd.min.js";
 umdMin.plugins = umdMin.plugins.concat(
 	uglifyPluginSetting
 );
@@ -24,13 +24,13 @@ umdMin.plugins = umdMin.plugins.concat(
 var amd = baseConfig();
 delete amd.output.library;
 amd.output.libraryTarget = "amd";
-amd.output.filename = "./dist/signal-amd.js";
+amd.output.filename = "./dist/signals-amd.js";
 
 
 var cjs2 = baseConfig();
 delete cjs2.output.library;
 cjs2.output.libraryTarget = "commonjs2";
-cjs2.output.filename = "./dist/signal-commonjs.js";
+cjs2.output.filename = "./dist/signals-commonjs.js";
 
 
 var system = baseConfig();
@@ -40,20 +40,20 @@ system.plugins.push(
 	new WebpackSystemRegister({
 		systemjsDeps: [
 		],
-		registerName: 'signal', // optional name that SystemJS will know this bundle as.
+		registerName: 'signals', // optional name that SystemJS will know this bundle as.
 	})
 );
-system.output.filename = "./dist/signal-systemjs.js";
+system.output.filename = "./dist/signals-systemjs.js";
 
 
 var browser = baseConfig();
 browser.output.libraryTarget = "var";
-browser.output.filename = "./dist/signal.js";
+browser.output.filename = "./dist/signals.js";
 
 
 var browserMin = baseConfig();
 browserMin.output.libraryTarget = "var";
-browserMin.output.filename = "./dist/signal.min.js";
+browserMin.output.filename = "./dist/signals.min.js";
 browserMin.plugins = browserMin.plugins.concat(
 	uglifyPluginSetting
 );

@@ -1,7 +1,7 @@
 {
-  "name": "seng-signal",
+  "name": "seng-signals",
   "version": "1.0.0",
-  "description": "Signal",
+  "description": "Signals",
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run build:npm",

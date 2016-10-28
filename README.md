@@ -1,10 +1,10 @@
-[![Travis](https://img.shields.io/travis/mientjan/signal.svg?maxAge=2592000)](https://travis-ci.org/mientjan/signal)
-[![Code Climate](https://img.shields.io/codeclimate/github/mientjan/signal.svg?maxAge=2592000)](https://codeclimate.com/github/mientjan/signal)
-[![Coveralls](https://img.shields.io/coveralls/mientjan/signal.svg?maxAge=2592000)](https://coveralls.io/github/mientjan/signal?branch=master)
-[![npm](https://img.shields.io/npm/v/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
-[![npm](https://img.shields.io/npm/dm/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
+[![Travis](https://img.shields.io/travis/mediamonks/seng-signals.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-signals)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-signals.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-signals)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-signals.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-signals?branch=master)
+[![npm](https://img.shields.io/npm/v/signals.svg?maxAge=2592000)](https://www.npmjs.com/package/signals)
+[![npm](https://img.shields.io/npm/dm/signals.svg?maxAge=2592000)](https://www.npmjs.com/package/signals)
 
-# signal
+# signals
 
 Add a description here...
 
@@ -14,13 +14,13 @@ Add a description here...
 ### npm
 
 ```sh
-npm i -S signal
+npm i -S signalss
 ```
 
 ### other
 
 We also have browser, amd, commonjs, umd, systemjs and es6 versions of
-this module available attached to the [Github Releases](https://github.com/mientjan/signal/releases).
+this module available attached to the [Github Releases](https://github.com/mediamonks/seng-signals/releases).
 
 <!---
 
@@ -32,10 +32,10 @@ new version.
 ### browser
 
 ```html
-<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.min.js"></script>
+<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/seng-signals.min.js"></script>
 ```
 ```js
-console.log(window.SengBoilerplate)
+console.log(window.SengSignals)
 ```
 
 ### other
@@ -43,12 +43,12 @@ console.log(window.SengBoilerplate)
 Besides the browser version, there are other versions available for
 download as well:
 
-- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.min.js))
-- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-umd.min.js))
-- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-amd.js)
-- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-commonjs.js)
-- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-system.js)
-- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/signal/1.2.0/signal-es6.zip)
+- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals.min.js))
+- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals-umd.min.js))
+- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals-amd.js)
+- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals-commonjs.js)
+- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals-system.js)
+- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/signals/1.2.0/signals-es6.zip)
 
 -->
 
@@ -60,8 +60,8 @@ targets yourself.
 ## Usage
 
 ```ts
-import SengBoilerplate from 'signal';
-// import SengBoilerplate from 'signal/lib/classname';
+import SengBoilerplate from 'signals';
+// import SengBoilerplate from 'signals/lib/classname';
 
 // do something with SengBoilerplate
 ```
@@ -69,27 +69,22 @@ import SengBoilerplate from 'signal';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/mientjan/signal/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/mediamonks/seng-signals/master/doc/typedoc/index.html).
 
 
 ## Building
 
-In order to build signal, ensure that you have [Git](http://git-scm.com/downloads)
+In order to build signals, ensure that you have [Git](http://git-scm.com/downloads)
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/mientjan/signal.git
+git clone https://github.com/mediamonks/seng-signals.git
 ```
 
-Change to the signal directory:
+Change to the signals directory:
 ```sh
-cd signal
-```
-
-Install typings cli utility:
-```sh
-npm install typings --global
+cd signals
 ```
 
 Install dev dependencies:
@@ -117,19 +112,19 @@ If you want to create the distribution files yourself, you can run the
 `build-dist` script, and the following files will get generated in the
 `dist` folder:
 
-- **/dist/signal.js**: bundled with webpack, can be loaded from
-	a script tag, available as `window.SengBoilerplate`
-- **/dist/signal.min.js**: same as above, but minified
-- **/dist/signal-amd.js**: bundled with webpack, can be used
+- **/dist/seng-signals.js**: bundled with webpack, can be loaded from
+	a script tag, available as `window.SengSignals`
+- **/dist/seng-signals.min.js**: same as above, but minified
+- **/dist/seng-signals-amd.js**: bundled with webpack, can be used
 	with e.g. requirejs
-- **/dist/signal-commonjs.js**: bundled with webpack, can be
+- **/dist/seng-signals-commonjs.js**: bundled with webpack, can be
 	used in systems that support commonjs, but you should just use npm
-- **/dist/signal-umd.js**: bundled with webpack, works in the
+- **/dist/seng-signals-umd.js**: bundled with webpack, works in the
 	browser, with requirejs, and in a commonjs system
-- **/dist/signal-umd.min.js**: same as above, but minified
-- **/dist/signal-system.js**: bundled with typescript, can be
+- **/dist/seng-signals-umd.min.js**: same as above, but minified
+- **/dist/seng-signals-system.js**: bundled with typescript, can be
 	used in systems	that support systemjs
-- **/dist/signal-es6.zip**: transpiled with typescript, only
+- **/dist/seng-signals-es6.zip**: transpiled with typescript, only
 	types are removed from the source files
 
 ## Contribute
@@ -291,7 +286,7 @@ sure the encrypted values only work for that repository.
 
     ```sh
     $ travis encrypt <your_auth_token>
-    Detected repository as mientjan/signal, is this correct? |yes|
+    Detected repository as mediamonks/seng-signals, is this correct? |yes|
     Please add the following to your .travis.yml file:
 
       secure: "YcN...Zb="
