@@ -1,6 +1,6 @@
-[![Travis](https://img.shields.io/travis/mediamonks/signal.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/signal)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/signal.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/signal)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/signal.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/signal?branch=master)
+[![Travis](https://img.shields.io/travis/mientjan/signal.svg?maxAge=2592000)](https://travis-ci.org/mientjan/signal)
+[![Code Climate](https://img.shields.io/codeclimate/github/mientjan/signal.svg?maxAge=2592000)](https://codeclimate.com/github/mientjan/signal)
+[![Coveralls](https://img.shields.io/coveralls/mientjan/signal.svg?maxAge=2592000)](https://coveralls.io/github/mientjan/signal?branch=master)
 [![npm](https://img.shields.io/npm/v/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
 [![npm](https://img.shields.io/npm/dm/signal.svg?maxAge=2592000)](https://www.npmjs.com/package/signal)
 
@@ -20,7 +20,7 @@ npm i -S signal
 ### other
 
 We also have browser, amd, commonjs, umd, systemjs and es6 versions of
-this module available attached to the [Github Releases](https://github.com/mediamonks/signal/releases).
+this module available attached to the [Github Releases](https://github.com/mientjan/signal/releases).
 
 <!---
 
@@ -69,7 +69,7 @@ import SengBoilerplate from 'signal';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/mediamonks/signal/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/mientjan/signal/master/doc/typedoc/index.html).
 
 
 ## Building
@@ -79,7 +79,7 @@ and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/mediamonks/signal.git
+git clone https://github.com/mientjan/signal.git
 ```
 
 Change to the signal directory:
@@ -291,7 +291,7 @@ sure the encrypted values only work for that repository.
 
     ```sh
     $ travis encrypt <your_auth_token>
-    Detected repository as mediamonks/signal, is this correct? |yes|
+    Detected repository as mientjan/signal, is this correct? |yes|
     Please add the following to your .travis.yml file:
 
       secure: "YcN...Zb="
