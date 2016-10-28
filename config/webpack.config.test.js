@@ -46,7 +46,7 @@ module.exports = function()
 					exclude: [
 						/node_modules/,
 						/test/,
-						/Spec\.ts$/
+						/\.spec\.ts$/
 					]
 				}
 			]

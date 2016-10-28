@@ -8,7 +8,7 @@ var serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
 
 var browser = baseConfig();
 browser.output.libraryTarget = "var";
-browser.output.filename = "./dist/seng-boilerplate.js";
+browser.output.filename = "./dist/signal.js";
 browser.output.path = path.join(__dirname, '../dist');
 browser.entry = [serverURI, browser.entry];
 

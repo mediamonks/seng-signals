@@ -1,12 +1,12 @@
-
-import * as chai from 'chai';
-import * as sinon from 'sinon';
-import * as sinonChai from 'sinon-chai';
+import chai = require("chai");
+// import sinon = require("sinon");
+// import sinonChai = require("sinon-chai");
 
 import {Signal} from "../src/lib/Signal";
 
-const {expect} = chai;
-chai.use(sinonChai);
+const {expect, assert} = chai;
+
+// chai.use(sinonChai);
 //
 describe('Signal', () =>
 {
@@ -16,55 +16,61 @@ describe('Signal', () =>
 		it('called once', () =>
 		{
 			var signal = new Signal();
-			let handler = sinon.spy();
+			var called = 0;
+			let handler = () => {
+				called++;
+			};
 			signal.connect(handler);
-
 			signal.emit();
-			expect(handler).calledOnce;
+			assert.equal(called, 1);
 		});
 
 		it('called twice', () =>
 		{
 			var signal = new Signal();
-			let handler = sinon.spy();
+			var called = 0;
+			let handler = () => {
+				called++;
+			};
 			signal.connect(handler);
-
 			signal.emit();
 			signal.emit();
-			expect(handler).calledTwice;
+			assert.equal(called, 2);
 		});
-
+		//
 		it('called thrice', () =>
 		{
 			var signal = new Signal();
-			let handler = sinon.spy();
+			var called = 0;
+			let handler = () => {
+				called++;
+			};
 			signal.connect(handler);
-
 			signal.emit();
 			signal.emit();
 			signal.emit();
-			expect(handler).calledThrice;
+			console.log(called);
+			assert.equal(called, 3);
 		});
 
 		it('has no listener', () =>
 		{
 			var signal = new Signal();
-			let handler = sinon.spy();
-			let connection = signal.connect(handler);
 
+			let connection = signal.connect(() => {});
 			connection.dispose();
 
-			expect(signal.hasListeners()).should.be.false;
+			expect(signal.hasListeners()).false;
 		});
 
 		it('has listener', () =>
 		{
 			var signal = new Signal();
-			let handler = sinon.spy();
-			signal.connect(handler);
-
-			expect(signal.hasListeners()).should.be.true;
+			signal.connect(() => {});
+			expect(signal.hasListeners()).true;
 		});
+
+
 	});
 
 });
