@@ -7,9 +7,10 @@ import {Signal} from "../src/lib/Signal";
 
 const {expect} = chai;
 chai.use(sinonChai);
-
+//
 describe('Signal', () =>
 {
+
 	describe('# emit', () =>
 	{
 		it('called once', () =>
@@ -19,7 +20,7 @@ describe('Signal', () =>
 			signal.connect(handler);
 
 			signal.emit();
-			expect(handler).calledOnce();
+			expect(handler).calledOnce;
 		});
 
 		it('called twice', () =>
@@ -30,7 +31,7 @@ describe('Signal', () =>
 
 			signal.emit();
 			signal.emit();
-			expect(handler).calledTwice();
+			expect(handler).calledTwice;
 		});
 
 		it('called thrice', () =>
@@ -42,7 +43,7 @@ describe('Signal', () =>
 			signal.emit();
 			signal.emit();
 			signal.emit();
-			expect(handler).calledThrice();
+			expect(handler).calledThrice;
 		});
 
 		it('has no listener', () =>
@@ -53,7 +54,7 @@ describe('Signal', () =>
 
 			connection.dispose();
 
-			expect(signal.hasListeners()).should.be.false();
+			expect(signal.hasListeners()).should.be.false;
 		});
 
 		it('has listener', () =>
@@ -62,7 +63,7 @@ describe('Signal', () =>
 			let handler = sinon.spy();
 			signal.connect(handler);
 
-			expect(signal.hasListeners()).should.be.true();
+			expect(signal.hasListeners()).should.be.true;
 		});
 	});
 

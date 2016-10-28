@@ -1,7 +1,7 @@
 {
-  "name": "seng-boilerplate",
-  "version": "1.2.0",
-  "description": "Boilerplate and example project for all Seng projects",
+  "name": "seng-signal",
+  "version": "1.0.0",
+  "description": "Signal",
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run build:npm",
@@ -73,9 +73,12 @@
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.32",
+    "@types/sinon": "^1.16.31",
+    "@types/sinon-chai": "^2.7.27",
     "@types/webpack": "^1.12.35",
+    "@types/webpack-env": "^1.12.1",
     "archiver": "^1.0.0",
-    "awesome-typescript-loader": "2.0.1",
+    "awesome-typescript-loader": "^2.2.4",
     "chai": "^3.5.0",
     "coveralls": "^2.11.6",
     "es6-promise": "^3.2.1",
@@ -89,6 +92,8 @@
     "karma-mocha": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-remap-istanbul": "^0.1.1",
+    "karma-sinon": "^1.0.5",
+    "karma-sinon-chai": "^1.2.4",
     "karma-source-map-support": "^1.1.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",

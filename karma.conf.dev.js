@@ -8,7 +8,7 @@ module.exports = function(config)
 
 		// List of test frameworks we will use. Most of them are provided by separate packages (adapters).
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks: ['mocha', 'sinon-chai', 'sinon', 'chai', 'source-map-support'],
+		frameworks: ['mocha', 'chai', 'source-map-support'],
 
 		// Entry point / test environment builder is also written in TypeScript.
 		files: [

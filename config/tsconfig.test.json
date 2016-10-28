@@ -19,6 +19,6 @@
     "noUnusedParameters": true
   },
   "files": [
-    "definition/index.d.ts"
+    "../definition/index.d.ts"
   ]
 }
