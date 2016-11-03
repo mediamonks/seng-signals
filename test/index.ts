@@ -1,5 +1,5 @@
 // require all test files
-const testsContext = require.context(
+const testsContext = (<any> require).context(
 	'./',
 	true,
 	/\.spec\.ts/
