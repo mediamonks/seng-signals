@@ -1,6 +1,7 @@
 /*eslint-disable */
 var webpack = require('webpack');
 var path = require('path');
+var TypedocWebpackPlugin = require('typedoc-webpack-plugin');
 
 module.exports = function()
 {
@@ -50,7 +51,13 @@ module.exports = function()
 			]
 		},
 
-		plugins: [],
+		plugins: [
+			new TypedocWebpackPlugin({
+				out: './doc/typedoc',
+				includeDeclarations: false,
+				ignoreCompilerErrors: true,
+			}, ['./src/lib'])
+		],
 		stats: {
 			colors: true
 		}
