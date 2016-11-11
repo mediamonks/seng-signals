@@ -1,8 +1,8 @@
-[![Travis](https://img.shields.io/travis/mediamonks/seng-signals.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-signals)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-signals.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-signals)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-signals.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-signals?branch=master)
-[![npm](https://img.shields.io/npm/v/seng-signals.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-signals)
-[![npm](https://img.shields.io/npm/dm/seng-signals.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-signals)
+[![Travis](https://img.shields.io/travis/mediamonks/seng-signals.svg?maxAge=86400)](https://travis-ci.org/mediamonks/seng-signals)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-signals.svg?maxAge=86400)](https://codeclimate.com/github/mediamonks/seng-signals)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-signals.svg?maxAge=86400)](https://coveralls.io/github/mediamonks/seng-signals?branch=master)
+[![npm](https://img.shields.io/npm/v/seng-signals.svg?maxAge=86400)](https://www.npmjs.com/package/seng-signals)
+[![npm](https://img.shields.io/npm/dm/seng-signals.svg?maxAge=86400)](https://www.npmjs.com/package/seng-signals)
 
 # signals
 
