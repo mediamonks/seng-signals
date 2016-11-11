@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/seng-signals.svg?maxAge=86400)](https://www.npmjs.com/package/seng-signals)
 [![npm](https://img.shields.io/npm/dm/seng-signals.svg?maxAge=86400)](https://www.npmjs.com/package/seng-signals)
 
-# signals
+# seng-signals
 
 Add a description here...
 
@@ -14,7 +14,7 @@ Add a description here...
 ### npm
 
 ```sh
-npm i -S seng-signals
+npm install --save seng-signals
 ```
 
 ### other
