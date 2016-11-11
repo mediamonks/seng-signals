@@ -27,8 +27,7 @@ import {SignalAbstract} from "./SignalAbstract";
 import {SignalConnection} from "./SignalConnection";
 
 /**
- * @namespace createts.events
- * @module createts
+ * @author Mient-jan Stelling
  * @class Signal2
  */
 export class Signal2<T1, T2> extends SignalAbstract

@@ -60,10 +60,11 @@ targets yourself.
 ## Usage
 
 ```ts
-import SengBoilerplate from 'signals';
+import {Signal, SignalConnection} from 'seng-signals';
 // import SengBoilerplate from 'signals/lib/classname';
 
-// do something with SengBoilerplate
+var signal = new Signal();
+signal.
 ```
 
 

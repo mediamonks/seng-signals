@@ -27,8 +27,7 @@ import {SignalAbstract} from "./SignalAbstract";
 import {SignalConnection} from "./SignalConnection";
 
 /**
- * @namespace core.events
- * @module weasel
+ * @author Mient-jan Stelling
  * @class Signal3
  */
 export class Signal3<T1, T2, T3> extends SignalAbstract

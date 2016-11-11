@@ -40,6 +40,10 @@ export class Task
 	}
 }
 
+/**
+ * @author Mient-jan Stelling
+ * @class
+ */
 export class SignalAbstract
 {
 	public static DISPATCHING_SENTINEL:SignalConnection = new SignalConnection(null, null);
