@@ -52,11 +52,6 @@ module.exports = function()
 		},
 
 		plugins: [
-			new TypedocWebpackPlugin({
-				out: './doc/typedoc',
-				includeDeclarations: false,
-				ignoreCompilerErrors: true,
-			}, ['./src/lib'])
 		],
 		stats: {
 			colors: true
