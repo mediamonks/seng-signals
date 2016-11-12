@@ -1,28 +1,19 @@
-import chai = require("chai");
-// import sinon = require("sinon");
-// import sinonChai = require("sinon-chai");
+import {expect, assert} from 'chai';
+import * as sinon from 'sinon';
 
 import {Signal} from "../src/lib/Signal";
 
-const {expect, assert} = chai;
-
-// chai.use(sinonChai);
-//
 describe('Signal', () =>
 {
-
 	describe('# emit', () =>
 	{
 		it('called once', () =>
 		{
 			var signal = new Signal();
-			var called = 0;
-			let handler = () => {
-				called++;
-			};
+			var handler = sinon.spy();
 			signal.connect(handler);
 			signal.emit();
-			assert.equal(called, 1);
+			expect(handler).to.have.been.called;
 		});
 
 		it('called twice', () =>
