@@ -2,6 +2,7 @@ import {expect, assert} from 'chai';
 import * as sinon from 'sinon';
 
 import {Signal} from "../src/lib/Signal";
+import {Signal1} from "../src/lib/Signal1";
 
 describe('Signal', () =>
 {
@@ -13,35 +14,29 @@ describe('Signal', () =>
 			var handler = sinon.spy();
 			signal.connect(handler);
 			signal.emit();
-			expect(handler).to.have.been.called;
+			expect(handler).to.have.been.calledOnce;
 		});
 
 		it('called twice', () =>
 		{
 			var signal = new Signal();
-			var called = 0;
-			let handler = () => {
-				called++;
-			};
+			var handler = sinon.spy();
 			signal.connect(handler);
 			signal.emit();
 			signal.emit();
-			assert.equal(called, 2);
+			expect(handler).to.have.been.calledTwice;
+
 		});
 		//
 		it('called thrice', () =>
 		{
 			var signal = new Signal();
-			var called = 0;
-			let handler = () => {
-				called++;
-			};
+			var handler = sinon.spy();
 			signal.connect(handler);
 			signal.emit();
 			signal.emit();
 			signal.emit();
-
-			assert.equal(called, 3);
+			expect(handler).to.have.been.calledThrice;
 		});
 
 		it('has no listener', () =>
@@ -61,7 +56,43 @@ describe('Signal', () =>
 			expect(signal.hasListeners()).true;
 		});
 
+		it('has no listeners after disconnect all has been called', () =>
+		{
+			var signal = new Signal();
+			var handler = sinon.spy();
+			signal.connect(sinon.spy());
+			signal.connect(sinon.spy());
+			signal.connect(sinon.spy());
+			signal.emit();
+			signal.disconnectAll();
 
+			expect(signal.hasListeners()).false;
+		});
+	});
+
+	describe('# emit 1 property', () =>
+	{
+		it('called once', () =>
+		{
+			var signal = new Signal1();
+			var handler = sinon.spy();
+			signal.connect(handler);
+			signal.emit('foo');
+			expect(handler).to.have.been.calledWith("foo");
+		});
+
+		it('has no listeners after disconnect all has been called', () =>
+		{
+			var signal = new Signal();
+			var handler = sinon.spy();
+			signal.connect(handler);
+			signal.emit("foo");
+			signal.disconnectAll();
+
+			expect(handler).to.have.been.calledWith("foo");
+
+			expect(signal.hasListeners()).false;
+		});
 	});
 
 });
