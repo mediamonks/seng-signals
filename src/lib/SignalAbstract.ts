@@ -42,7 +42,7 @@ export class Task
 
 /**
  * @author Mient-jan Stelling
- * @class
+ * @class SignalAbstract
  */
 export class SignalAbstract
 {
@@ -105,7 +105,11 @@ export class SignalAbstract
 		}
 	}
 
-	public defer(fn:() => void):void
+	/**
+	 *
+	 * @param fn
+	 */
+	protected defer(fn:() => void):void
 	{
 		var tail:Task|null = null;
 		var p = this._deferredTasks;
@@ -127,14 +131,14 @@ export class SignalAbstract
 		}
 	}
 
-	public willEmit():SignalConnection|null
+	protected willEmit():SignalConnection|null
 	{
 		var snapshot = this._head;
 		this._head = SignalAbstract.DISPATCHING_SENTINEL;
 		return snapshot;
 	}
 
-	public didEmit(head:SignalConnection|null):void
+	protected didEmit(head:SignalConnection|null):void
 	{
 		var snapshot = this._deferredTasks;
 
@@ -148,12 +152,16 @@ export class SignalAbstract
 		}
 	}
 
+	/**
+	 * Is true when the signal is in its dispatching cicle
+	 * @returns {boolean}
+	 */
 	public dispatching():boolean
 	{
 		return this._head == SignalAbstract.DISPATCHING_SENTINEL;
 	}
 
-	public listAdd(conn:SignalConnection, prioritize:boolean):void
+	protected listAdd(conn:SignalConnection, prioritize:boolean):void
 	{
 		if(prioritize)
 		{
@@ -182,7 +190,11 @@ export class SignalAbstract
 		}
 	}
 
-	public listRemove(conn:SignalConnection):void
+	/**
+	 * Removes listener
+	 * @param conn
+	 */
+	protected listRemove(conn:SignalConnection):void
 	{
 		var prev:SignalConnection|null = null;
 		var p:SignalConnection|null = this._head;

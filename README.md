@@ -38,9 +38,9 @@ var connection = signal.connect(function(){
 	console.log('emitted');
 });
 
-signal.emit();
-signal.emit();
-signal.emit();
+signal.emit(); // console.log('emitted');
+signal.emit(); // console.log('emitted');
+signal.emit(); // console.log('emitted');
 
 // console has 3 logs with the text emitted.
 
@@ -53,9 +53,9 @@ var connection = signal.connect(function(){
 
 connection.once();
 
-signal.emit();
-signal.emit();
-signal.emit();
+signal.emit(); // console.log('emitted');
+signal.emit(); // nothing
+signal.emit(); // nothing
 
 // console has 1 logs with the text emitted.
 
@@ -64,9 +64,9 @@ var connection = signal.connect(function(value){
 	console.log('emitted:', value);
 });
 
-signal.emit(1);
-signal.emit(2);
-signal.emit(3);
+signal.emit(1); // console.log('emitted:', 1);
+signal.emit(2); // console.log('emitted:', 2);
+signal.emit(3); // console.log('emitted:', 3);
 
 // console has 3 logs with the text emitted 1, emitted 2, emitted 3.
 
@@ -75,9 +75,12 @@ var connection = signal.connect(function(a, b){
 	console.log('emitted:', a, b);
 });
 
-signal.emit('apple', 1);
-signal.emit('pinapple', 2);
-signal.emit('sugar', 3);
+signal.emit('apple', 1); // console.log('emitted:', 'apple', 1);
+signal.emit('pinapple', 2); // console.log('emitted:', 'apple', 1);
+
+connection.dispose();
+
+signal.emit('sugar', 3); // nothing
 
 // console has 3 logs with the text 
 // emitted apple 1, emitted pinapple 2, emitted sugar 3.
