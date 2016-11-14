@@ -41,7 +41,7 @@ export class Task
 }
 
 /**
- * @author Mient-jan Stelling
+ *
  * @class SignalAbstract
  */
 export class SignalAbstract
@@ -63,6 +63,37 @@ export class SignalAbstract
 	public hasListeners():boolean
 	{
 		return this._head != null;
+	}
+
+	/**
+	 * removes All connections from signal
+	 */
+	public disconnectAll():this
+	{
+		if(this.hasListeners())
+		{
+			if(this.dispatching())
+			{
+				this.defer(() => this._disconnectAll());
+			} else {
+				this._disconnectAll();
+			}
+		}
+
+		return this;
+	}
+
+	protected _disconnectAll():this
+	{
+		if(this.hasListeners())
+		{
+			while(this._head)
+			{
+				this.disconnect(this._head);
+			}
+		}
+
+		return this;
 	}
 
 	/**
