@@ -37,7 +37,7 @@ export class Signal extends SignalAbstract
 	 *
 	 * @method emit
 	 */
-	public emit(...args):void
+	public emit(...args:Array<any>):void
 	{
 		if(this.dispatching())
 		{
@@ -45,7 +45,7 @@ export class Signal extends SignalAbstract
 		}
 		else
 		{
-			this.emitImpl.apply(this, arguments)
+			this.emitImpl.apply(this, arguments);
 		}
 	}
 
@@ -56,7 +56,7 @@ export class Signal extends SignalAbstract
 
 		while(p != null)
 		{
-			p._listener.apply(p, arguments)
+			p._listener.apply(p, arguments);
 
 			if(!p.stayInList)
 			{
