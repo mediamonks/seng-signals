@@ -79,8 +79,62 @@ signal.emit('apple', 1);
 signal.emit('pinapple', 2);
 signal.emit('sugar', 3);
 
-// console has 3 logs with the text emitted apple 1, emitted pinapple 2, emitted sugar 3.
+// console has 3 logs with the text 
+// emitted apple 1, emitted pinapple 2, emitted sugar 3.
+
+
+var signal = new Signal();
+signal.connect(function(a, b){
+	console.log('emitted A');
+}).once();
+
+// put this listener on top of all others
+signal.connect(function(){
+	console.log('emitted B');
+}, true).once();
+
+signal.emit();
+
+// console has 2 logs with the text 
+// emitted B then emitted A
+
 ```
+
+### Usage with Class
+This is all hypothetical fetch streaming code, this just gives a example of how to use signals in different setting.
+```
+class Loader {
+  constructor(path){
+    this.path = path;
+    this.progress = new Signal1();
+    this.complete = new Signal();
+  }
+  
+  load(){
+    var _this = this;
+    fetch(this.path).then(response => {
+      var reader = response.body.getReader();
+      var bytesReceived = 0;
+      var totalBytes = 1000000;
+      
+    
+      reader.read().then(function processResult(result) {
+
+        if (result.done) {
+          _this.complete.emit();
+          return;
+        }
+    
+        bytesReceived += result.value.length;
+        
+        _this.progress.emit(bytesReceived/totalBytes);
+        return reader.read().then(processResult);
+      });
+    });
+  }
+}
+```
+
 
 
 ## Documentation
