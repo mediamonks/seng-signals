@@ -23,6 +23,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import "ts-helpers";
 import {SignalAbstract} from "./SignalAbstract";
 
 export class SignalConnection

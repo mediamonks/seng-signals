@@ -27,6 +27,7 @@
  * Signal provides method for managing queues of a single event listener and dispatching it.
  **/
 
+import "ts-helpers";
 import {SignalConnection} from "./SignalConnection";
 
 export class Task

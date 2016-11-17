@@ -4,7 +4,6 @@
   "description": "Signals",
   "main": "index.js",
   "scripts": {
-    "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "prepublish": "npm run build:npm",
     "test": "npm-run-all test:*",
     "test:unit": "karma start --single-run --browsers PhantomJS",
@@ -108,7 +107,6 @@
     "shx": "^0.1.2",
     "sinon": "^2.0.0-pre",
     "sinon-chai": "^2.8.0",
-    "ts-helpers": "^1.1.1",
     "tslint": "^3.3.0",
     "typedoc": "^0.5.1",
     "typedoc-webpack-plugin": "^1.1.3",
@@ -118,5 +116,7 @@
     "webpack-system-register": "^1.3.2",
     "webpack-validator": "^2.1.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ts-helpers": "^1.1.2"
+  }
 }
