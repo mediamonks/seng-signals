@@ -4,6 +4,7 @@
   "description": "Signals",
   "main": "index.js",
   "scripts": {
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "prepublish": "npm run build:npm",
     "test": "npm-run-all test:*",
     "test:unit": "karma start --single-run --browsers PhantomJS",
